@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='script.js'></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Adicionar vinho</h1>
+    <form id="formAddVinho">
+      <label for="nomeInput">Nome:</label><br>
+      <input type="text" id="nomeInput" name="nomeInput"><br>
+      <label for="safraInput">Safra:</label><br>
+      <input type="number" id="safraInput" name="safraInput"><br>
+      <label for="tipoInput">Tipo:</label><br>
+      <input type="text" id="tipoInput" name="tipoInput"><br>
+      <label for="precoInput">Preço:</label><br>
+      <input type="number" id="precoInput" name="precoInput"><br>
+      <button type="button" id="addVinhoButton">Adicionar vinho</button>
+    </form>
+    <h2>Vinhos:</h2>
+    <ul id="vinhosList"></ul>
+  </body>
+  <script>
+    document.getElementById('addVinhoButton').addEventListener('click', function() {
+      let nome = document.getElementById('nomeInput').value;
+      let safra = parseInt(document.getElementById('safraInput').value);
+      let tipo = document.getElementById('tipoInput').value;
+      let preco = parseFloat(document.getElementById('precoInput').value);
+
+      addVinho(nome, safra, tipo, preco);
+      document.getElementById('vinhosList').innerHTML = '';
+      for (let i = 0; i < vinhos.length; i++) {
+        document.getElementById('vinhosList').innerHTML += '<li>Nome: ' + vinhos[i].nome + ', Safra: ' + vinhos[i].safra + ', Tipo: ' + vinhos[i].tipo + ', Preço: ' + vinhos[i].preco + '</li>';
+      }
+    });
+  </script>
+</html>
