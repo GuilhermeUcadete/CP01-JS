@@ -1,6 +1,6 @@
 let vinhos = [];
 
-function addVinho(nome, safra, tipo, preco) {
+function addVinho(nome, safra, tipo, preco){
   let novoVinho = {
     nome: nome,
     safra: safra,
